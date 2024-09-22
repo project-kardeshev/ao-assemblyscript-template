@@ -1,0 +1,33 @@
+{
+  "targets": {
+    "debug": {
+      "binaryFile": "build/debug.wasm",
+      "textFile": "build/debug.wat",
+      "sourceMap": true,
+      "optimizeLevel": 0,
+      "shrinkLevel": 0,
+      "runtime": "full"
+    },
+   "release": {
+        "binaryFile": "build/release.wasm",
+        "textFile": "build/release.wat",
+        "sourceMap": false,
+        "optimizeLevel": 3,
+        "shrinkLevel": 1,
+        "converge": true,
+        "runtime": "stub" 
+        }
+  },
+  "options": {
+    "bindings": "raw",
+    "noAssert": true,
+    "exportRuntime": true
+  },
+  "entry": {
+    "main": "src/index.ts"
+  },
+  "exports": [
+    "handle"
+  ],
+  "extends": "./node_modules/@assemblyscript/loader/index.js"
+}
